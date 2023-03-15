@@ -7,7 +7,7 @@
 //Estructura para vehiculos.txt -> Almacena inforomación de los vehiculos del sistema.
 
 typedef struct{
-    char idusuario[4];
+    char idusuario[5];
     char matricula[8];
     int plazas;
     char descript[50];
@@ -16,7 +16,7 @@ typedef struct{
 //Estructura para usuarios.txt -> Almacena información de los usuarios del sistema.
 
 typedef struct{
-    int idusuario[4];
+    char idusuario[5];
     char nombre[20];        //nombre real de la persona
     char localidad[20];
     int administrador;  // 1 si es admin, 0 si no lo es
@@ -41,7 +41,7 @@ typedef struct{
 //Estructura para pasos.txt -> almancena info de plasos del viaje.
 
 typedef struct{
-    int idviaje[7];
+    char idviaje[7];
     char poblados[20];
 }pasos;
 

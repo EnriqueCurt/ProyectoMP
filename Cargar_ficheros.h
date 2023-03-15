@@ -6,6 +6,8 @@
 #include <string.h>
 #include "struct_ficheros.h"
 
+int cargar_datos_desde_archivo(usuario* estructura);
+
 
 
 
