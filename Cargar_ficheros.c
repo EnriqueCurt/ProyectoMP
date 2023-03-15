@@ -1,23 +1,30 @@
-#include<stdio.h>
 #include "struct_ficheros.h"
-#include "Cargar_ficheros.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-int cargar_datos_desde_archivo(usuario* u1) {
+#define MAX_LINE_LENGTH 100
 
-    FILE* archivo;
-    char linea[100];
-
-    archivo = fopen("usuarios.txt", "r");
-    if (archivo == NULL) {
-        printf("No se pudo abrir el archivo\n");
-        return 1;
-    }
-    while (fgets(linea, 100, archivo)) {
-        sscanf(linea,"%s %s %s %i %s %s",u1->idusuario, u1->nombre, u1->localidad, &u1->administrador, u1->cuenta, u1->contra);
-         printf("ID: %s Nombre: %s Localidad: %s Admin: %i Cuenta: %s Contrasena: %s ", u1->idusuario,u1->nombre, u1->localidad, u1->administrador, u1->cuenta, u1->contra);
+void cargar_usuarios_desde_archivo(const char* archivo, usuario* usuarios, int* num_usuarios) {
+    FILE* fp = fopen(archivo, "r");
+    if (!fp) {
+        printf("No se pudo abrir el archivo %s\n", archivo);
+        exit(1);
     }
 
-    fclose(archivo);
+    int i = 0;
+    char line[MAX_LINE_LENGTH];
+    while (fgets(line, MAX_LINE_LENGTH, fp)) {
+        sscanf(line, "%s %s %s %d %s %s",
+               usuarios[i].idusuario,
+               usuarios[i].nombre,
+               usuarios[i].localidad,
+               &(usuarios[i].administrador),
+               usuarios[i].cuenta,
+               usuarios[i].contra);
+        i++;
     }
+    *num_usuarios = i;
+
+    fclose(fp);
+}

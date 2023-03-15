@@ -3,13 +3,21 @@
 #include "Cargar_ficheros.h"
 #include "Cargar_ficheros.c"
 int main(){
-    usuario u1;
-    int resultado;
+  usuario usuarios[100];
+    int num_usuarios = 0;
 
-    resultado = cargar_datos_desde_archivo(&u1);
-    if (resultado != 0) {
-        printf("Error al cargar los datos desde el archivo\n");
-        return 1;
+    cargar_usuarios_desde_archivo("usuarios.txt", usuarios, &num_usuarios);
+
+    printf("Se cargaron %d usuarios desde el archivo\n", num_usuarios);
+    for (int i = 0; i < num_usuarios; i++) {
+        printf("Usuario %d: id=%s, nombre=%s, localidad=%s, admin=%d, cuenta=%s, contra=%s\n",
+               i+1,
+               usuarios[i].idusuario,
+               usuarios[i].nombre,
+               usuarios[i].localidad,
+               usuarios[i].administrador,
+               usuarios[i].cuenta,
+               usuarios[i].contra);
     }
 
 

@@ -6,15 +6,6 @@
 #include <string.h>
 #include "struct_ficheros.h"
 
-int cargar_datos_desde_archivo(usuario* estructura);
-
-
-
-
-
-
-
-
-
+void cargar_usuarios_desde_archivo(const char* archivo, usuario* usuarios, int* num_usuarios);
 
 #endif

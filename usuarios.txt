@@ -1,1 +1,2 @@
-001-jose-jerez-1-pepe-pepito
+001 Juan Buenos_Aires 1 JUAN 12345678
+002 Ana Cordoba 0 ANA 87654321
