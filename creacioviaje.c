@@ -4,13 +4,13 @@ struct viaje
 {
 	int idviaje;
 	int idusuario;
-	char matricula[8];
+	char matricula[];
 	int plazalibre;
 	int idavuel;
 	char estado[];
-	char fecha[11];
-	char horasal[6];
-	char horalle[6];
+	char fecha[];
+	char horasal[];
+	char horalle[];
 	float totalprec;
 }
 
