@@ -2,12 +2,13 @@
 
 int main (){
 	char opcion;
-	printf("¿desea cambiar el estado del viaje?\n");
+	int opcion2;
+	printf("Â¿desea cambiar el estado del viaje?\n");
 	scanf("$c",&opcion);
 	if($opcion=="si"){
 		printf("elija una se las siguientes opciones:\n Abierto=1 \n Cerrado \n Iniciado \n Finalizado \n Anulado");
-
-		switch (opcion){
+	scanf("$i",&opcion2);
+		switch (opcion2){
 			case 'Abierto' :
 				viaje[idviaje].estado="abierto";
 				puts("El estado del viaje ahora es Abierto");
