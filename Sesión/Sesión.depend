@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1678893104 source:c:\users\juane\desktop\ip\sesión\main.c
+
+1678893792 source:c:\users\juane\desktop\ip\sesión\register.c
+	<stdio.h>
+	<stdlib.h>
+
