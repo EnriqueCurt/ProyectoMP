@@ -28,3 +28,53 @@ void cargar_usuarios_desde_archivo(const char* archivo, usuario* usuarios, int* 
 
     fclose(fp);
 }
+
+void cargar_vehiculos_desde_archivo(const char* archivo, vehiculo* vehiculos, int* num_vehiculos) {
+    FILE* fp = fopen(archivo, "r");
+    if (!fp) {
+        printf("No se pudo abrir el archivo %s\n", archivo);
+        exit(1);
+    }
+
+    int i = 0;
+    char line[MAX_LINE_LENGTH];
+    while (fgets(line, MAX_LINE_LENGTH, fp)) {
+        sscanf(line, "%s %s %d %s",
+               vehiculos[i].idusuario,
+               vehiculos[i].matricula,
+               &(vehiculos[i].plazas),
+               vehiculos[i].descript);
+        i++;
+    }
+    *num_vehiculos = i;
+
+    fclose(fp);
+}
+
+void cargar_viajes_desde_archivo(const char* archivo, viaje* viajes, int* num_viajes) {
+    FILE* fp = fopen(archivo, "r");
+    if (!fp) {
+        printf("No se pudo abrir el archivo %s\n", archivo);
+        exit(1);
+    }
+
+    int i = 0;
+    char line[MAX_LINE_LENGTH];
+    while (fgets(line, MAX_LINE_LENGTH, fp)) {
+        sscanf(line, "%s %s %s %s %s %d %d %f %s",
+               viajes[i].idviaje,
+               viajes[i].matricula,
+               viajes[i].fecha,
+               viajes[i].horasalida,
+               viajes[i].horallegada,
+               &(viajes[i].idavuelta),
+               &(viajes[i].plazas),
+               &(viajes[i].precio),
+               viajes[i].estado)
+               ;
+        i++;
+    }
+    *num_usuarios = i;
+
+    fclose(fp);
+}

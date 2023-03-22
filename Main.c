@@ -4,9 +4,16 @@
 #include "Cargar_ficheros.c"
 int main(){
   usuario usuarios[100];
+  vehiculo vehiculos[100];
+  viaje viajes[100];
     int num_usuarios = 0;
+    int num_vehiculos = 0;
+    int num_viajes = 0;
+
 
     cargar_usuarios_desde_archivo("usuarios.txt", usuarios, &num_usuarios);
+    cargar_vehiculos_desde_archivo("vehiculos.txt", vehiculos, &num_vehiculos);
+    cargar_viajes_desde_archivo(const char* archivo, viaje* viajes, int* num_viajes);
 
     printf("Se cargaron %d usuarios desde el archivo\n", num_usuarios);
     for (int i = 0; i < num_usuarios; i++) {
@@ -19,7 +26,14 @@ int main(){
                usuarios[i].cuenta,
                usuarios[i].contra);
     }
+    printf("Se cargaron %d vehiculos desde el archivo\n", num_vehiculos);
+    for (int j = 0; j < num_vehiculos; j++) {
+        printf("Id usuario %s Matricula=%s, plazas=%d , descripcion=%s \n",
+               vehiculos[j].idusuario,
+               vehiculos[j].matricula,
+               vehiculos[j].plazas,
+               vehiculos[j].descript);
+    }
 
-
-
-return 0;}
+return 0;
+}
