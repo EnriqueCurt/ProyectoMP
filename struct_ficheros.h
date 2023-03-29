@@ -4,6 +4,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct{
+    int dia;
+    int mes;
+    int ano;
+    }calendario;
+
 //Estructura para vehiculos.txt -> Almacena inforomación de los vehiculos del sistema.
 
 typedef struct{
@@ -24,14 +30,19 @@ typedef struct{
     char contra[8];     // la contraseña
 }usuario;
 
+typedef struct{
+    int horas;
+    int minutos;
+    }horario;
+
 //Estructura para viajes.txt -> Almacena información de los viajes.
 
 typedef struct{
     char idviaje[6];
     char matricula[8];
-    char fecha[11];         // "dd/mm/yyyy"
-    char horasalida[6];     // hh:mm
-    char horallegada[6];    // hh:mm
+    calendario fecha[11];         // "dd/mm/yyyy"
+    horario horasalida[6];     // hh:mm
+    horario horallegada[6];    // hh:mm
     int idavuelta;      // decimos 0 si es ida, 1 si es vuelta
     int plazas;
     float precio;
@@ -43,6 +54,6 @@ typedef struct{
 typedef struct{
     char idviaje[7];
     char poblados[20];
-}pasos;
+}paso;
 
 #endif

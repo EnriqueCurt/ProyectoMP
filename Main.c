@@ -3,17 +3,15 @@
 #include "Cargar_ficheros.h"
 #include "Cargar_ficheros.c"
 int main(){
-  usuario usuarios[100];
-  vehiculo vehiculos[100];
-  viaje viajes[100];
+  usuario *usuarios;
+  vehiculo *vehiculos;
+  viaje *viajes;
+  paso *pasos;
     int num_usuarios = 0;
     int num_vehiculos = 0;
     int num_viajes = 0;
-
-
-    cargar_usuarios_desde_archivo("usuarios.txt", usuarios, &num_usuarios);
-    cargar_vehiculos_desde_archivo("vehiculos.txt", vehiculos, &num_vehiculos);
-    cargar_viajes_desde_archivo("viajes.txt", viajes,&num_viajes);
+    int num_pasos = 0;
+    cargar_ficheros(usuarios,&num_usuarios,vehiculos,&num_vehiculos,viajes,&num_viajes,pasos,&num_pasos);
 
     printf("Se cargaron %d usuarios desde el archivo\n", num_usuarios);
     for (int i = 0; i < num_usuarios; i++) {
@@ -46,6 +44,12 @@ int main(){
                viajes[j].plazas,
                viajes[j].precio,
                viajes[j].estado);
+    }
+    printf("Se cargaron %d pasos desde el archivo\n", num_pasos);
+    for (int j = 0; j < num_vehiculos; j++) {
+        printf("Id viaje=%s,Poblacion=%s \n",
+               pasos[j].idviaje,
+               pasos[j].poblados);
     }
 
 return 0;
