@@ -7,5 +7,6 @@
 #include "struct_ficheros.h"
 
 void cargar_usuarios_desde_archivo(const char* archivo, usuario* usuarios, int* num_usuarios);
-
+void cargar_vehiculos_desde_archivo(const char* archivo, vehiculo* vehiculos, int* num_vehiculos);
+void cargar_viajes_desde_archivo(const char* archivo, viaje* viajes, int* num_viajes);
 #endif
