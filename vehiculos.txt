@@ -1,2 +1,2 @@
-0001 1234BDL 5 Grande
-0002 4896JLM 7 Furgoneta_Muy_Grande
+0001-1234BDL-5-Grande
+0002-4896JLM-7-Furgoneta Muy Grande

@@ -15,7 +15,7 @@ void cargar_usuarios_desde_archivo(const char* archivo, usuario* usuarios, int* 
     int i = 0;
     char line[MAX_LINE_LENGTH];
     while (fgets(line, MAX_LINE_LENGTH, fp)) {
-        sscanf(line, "%s %s %s %d %s %s",
+        sscanf(line, "%[^-]-%[^-]-%[^-]-%d-%[^-]-%[^-]-",
                usuarios[i].idusuario,
                usuarios[i].nombre,
                usuarios[i].localidad,
@@ -39,7 +39,7 @@ void cargar_vehiculos_desde_archivo(const char* archivo, vehiculo* vehiculos, in
     int i = 0;
     char line[MAX_LINE_LENGTH];
     while (fgets(line, MAX_LINE_LENGTH, fp)) {
-        sscanf(line, "%s %s %d %s",
+        sscanf(line, "%[^-]-%[^-]-%d-%[^-]",
                vehiculos[i].idusuario,
                vehiculos[i].matricula,
                &(vehiculos[i].plazas),
@@ -61,7 +61,7 @@ void cargar_viajes_desde_archivo(const char* archivo, viaje* viajes, int* num_vi
     int i = 0;
     char line[MAX_LINE_LENGTH];
     while (fgets(line, MAX_LINE_LENGTH, fp)) {
-        sscanf(line, "%s %s %s %s %s %d %d %f %s",
+        sscanf(line, "%[^-]-%[^-]-%[^-]-%[^-]-%[^-]-%d-%d-%f-%[^-]",
                viajes[i].idviaje,
                viajes[i].matricula,
                viajes[i].fecha,
@@ -74,7 +74,7 @@ void cargar_viajes_desde_archivo(const char* archivo, viaje* viajes, int* num_vi
                ;
         i++;
     }
-    *num_usuarios = i;
+    *num_viajes = i;
 
     fclose(fp);
 }

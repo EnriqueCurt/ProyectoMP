@@ -13,7 +13,7 @@ int main(){
 
     cargar_usuarios_desde_archivo("usuarios.txt", usuarios, &num_usuarios);
     cargar_vehiculos_desde_archivo("vehiculos.txt", vehiculos, &num_vehiculos);
-    cargar_viajes_desde_archivo(const char* archivo, viaje* viajes, int* num_viajes);
+    cargar_viajes_desde_archivo("viajes.txt", viajes,&num_viajes);
 
     printf("Se cargaron %d usuarios desde el archivo\n", num_usuarios);
     for (int i = 0; i < num_usuarios; i++) {
@@ -33,6 +33,19 @@ int main(){
                vehiculos[j].matricula,
                vehiculos[j].plazas,
                vehiculos[j].descript);
+    }
+    printf("Se cargaron %d viajes desde el archivo\n", num_vehiculos);
+    for (int j = 0; j < num_vehiculos; j++) {
+        printf("Id viaje=%s, Matricula=%s,fecha=%s , hora salida=%s, hora llegada=%s, ida o vuelta=%d, plazas=%d, precio=%.2f, estado=%s \n",
+               viajes[j].idviaje,
+               viajes[j].matricula,
+               viajes[j].fecha,
+               viajes[j].horasalida,
+               viajes[j].horallegada,
+               viajes[j].idavuelta,
+               viajes[j].plazas,
+               viajes[j].precio,
+               viajes[j].estado);
     }
 
 return 0;

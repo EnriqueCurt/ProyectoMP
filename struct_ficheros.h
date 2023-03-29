@@ -36,7 +36,7 @@ typedef struct{
     int plazas;
     float precio;
     char estado[11];    // estado del viaje
-}viajes;
+}viaje;
 
 //Estructura para pasos.txt -> almancena info de plasos del viaje.
 
