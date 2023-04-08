@@ -38,11 +38,11 @@ typedef struct{
 //Estructura para viajes.txt -> Almacena información de los viajes.
 
 typedef struct{
-    char idviaje[6];
+    char idviaje[7];
     char matricula[8];
-    calendario fecha[11];         // "dd/mm/yyyy"
-    horario horasalida[6];     // hh:mm
-    horario horallegada[6];    // hh:mm
+    calendario fecha;         // "dd/mm/yyyy"
+    horario horasalida;     // hh:mm
+    horario horallegada;    // hh:mm
     int idavuelta;      // decimos 0 si es ida, 1 si es vuelta
     int plazas;
     float precio;
@@ -57,3 +57,4 @@ typedef struct{
 }paso;
 
 #endif
+
