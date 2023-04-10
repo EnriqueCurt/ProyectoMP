@@ -23,11 +23,11 @@ typedef struct{
 
 typedef struct{
     char idusuario[5];
-    char nombre[20];        //nombre real de la persona
-    char localidad[20];
+    char nombre[21];        //nombre real de la persona
+    char localidad[21];
     int administrador;  // 1 si es admin, 0 si no lo es
-    char cuenta[5];     //  nombre de la cuenta
-    char contra[8];     // la contraseña
+    char cuenta[6];     //  nombre de la cuenta
+    char contra[9];     // la contraseña
 }usuario;
 
 typedef struct{
