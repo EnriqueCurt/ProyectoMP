@@ -4,6 +4,8 @@
 #include "Cargar_ficheros.c"
 #include "volcar_datos_ficheros.h"
 #include "volcar_datos_ficheros.c"
+#include "creacioviaje.c"
+#include "creacioviaje.h"
 int main(){
   usuario* usuarios = (usuario*)malloc(sizeof(usuario));
   vehiculo* vehiculos =(vehiculo*)malloc(sizeof(vehiculo));
@@ -36,8 +38,8 @@ int main(){
                vehiculos[j].descript);
     }
 
-    printf("\nSe cargaron %d viajes desde el archivo\n", num_vehiculos);
-    for (int j = 0; j < num_vehiculos; j++) {
+    printf("\nSe cargaron %d viajes desde el archivo\n", num_viajes);
+    for (int j = 0; j < num_viajes; j++) {
         printf("Id viaje=%s, Matricula=%s,fecha=%02d/%02d/%d , hora salida=%02d:%02d, hora llegada=%02d:%02d, ida o vuelta=%d, plazas=%d, precio=%.2f$, estado=%s \n",
                viajes[j].idviaje,
                viajes[j].matricula,
@@ -60,7 +62,7 @@ int main(){
                pasos[j].idviaje,
                pasos[j].poblados);
     }
-
-volcar_ficheros(usuarios,&num_usuarios,vehiculos,&num_vehiculos,viajes,&num_viajes,pasos,&num_pasos);
+    creacioviaje(&viajes,&num_viajes,&vehiculos);
+    volcar_ficheros(usuarios,&num_usuarios,vehiculos,&num_vehiculos,viajes,&num_viajes,pasos,&num_pasos);
 return 0;
 }
