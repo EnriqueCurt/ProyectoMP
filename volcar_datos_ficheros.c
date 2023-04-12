@@ -109,13 +109,13 @@ void volcar_datos_viajes_archivo(const char* archivo, viaje* viajes, int* num_vi
             strcat(line,"-");
             strcat(line,viajes[i].estado);
             if(line[strlen(line)-1] == '\n'){
-                line[strlen(line)-1] = ' ';
+                line[strlen(line)-1] = '\0';
             }
              if(i<*num_viajes-1){
                 fprintf(fp, "%s\n", line);
             }
             if(i==*num_viajes-1){
-                line[strlen(line)] = ' ' ;
+                line[strlen(line)] = '\0' ;
                 fprintf(fp, "%s", line);
             }
         }

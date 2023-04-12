@@ -6,6 +6,10 @@
 #include "volcar_datos_ficheros.c"
 #include "creacioviaje.c"
 #include "creacioviaje.h"
+#include "InicioSesion.h"
+#include "InicioSesion.c"
+#include "Registro.h"
+#include "Registro.c"
 int main(){
   usuario* usuarios = (usuario*)malloc(sizeof(usuario));
   vehiculo* vehiculos =(vehiculo*)malloc(sizeof(vehiculo));
@@ -62,7 +66,8 @@ int main(){
                pasos[j].idviaje,
                pasos[j].poblados);
     }
-    creacioviaje(&viajes,&num_viajes,&vehiculos);
+    iniciosesion(&usuarios,&num_usuarios);
+    //creacioviaje(&viajes,&num_viajes,&vehiculos);
     volcar_ficheros(usuarios,&num_usuarios,vehiculos,&num_vehiculos,viajes,&num_viajes,pasos,&num_pasos);
 return 0;
 }
