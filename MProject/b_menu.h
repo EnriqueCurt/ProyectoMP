@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+void listaUsuarios();
+void listarVehiculos();
+void listarViajes();
 
 
 
