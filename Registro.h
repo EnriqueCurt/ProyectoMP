@@ -4,5 +4,5 @@
 #define _REGISTRO_H_
 #include "struct_ficheros.h"
 
-void registro(usuario**,int**);
+void registro(usuario**,int*);
 #endif

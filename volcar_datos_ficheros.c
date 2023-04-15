@@ -28,10 +28,16 @@ char buffer[20];
             strcat(line, usuarios[i].cuenta);
             strcat(line, "-");
             strcat(line, usuarios[i].contra);
-            if(i==*num_usuarios){
-                line[strlen(line)-1] = '\0' ;
+            if(line[strlen(line)-1] == '\n'){
+                line[strlen(line)-1] = '\0';
             }
-            fprintf(fp, "%s", line);
+             if(i<*num_usuarios-1){
+                fprintf(fp, "%s\n", line);
+            }
+            if(i==*num_usuarios-1){
+                line[strlen(line)] = '\0' ;
+                fprintf(fp, "%s", line);
+            }
         }
         fclose(fp);
     }
