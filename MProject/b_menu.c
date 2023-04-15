@@ -3,8 +3,8 @@
 #include <string.h>
 #include "struct_ficheros.h"
 
-void listaUsuarios(){
-    printf("Estos son todos los usuarios");
+void listaUsuarios(usuario usuarios[],int num_usuarios){
+    printf("Estos son los usuarios");
     for (int i = 0; i < num_usuarios; i++) {
         printf("Usuario %d: id=%s, nombre=%s, localidad=%s, admin=%d, cuenta=%s, contra=%s\n",
                i+1,
@@ -17,8 +17,8 @@ void listaUsuarios(){
     }
 }
 
-void listarVehiculos(){
-    printf("Estos son todos los viajes\n");
+void listarVehiculos(vehiculo vehiculos[],int num_vehiculos){
+    printf("Estos son los vehiculos\n");
      for (int j = 0; j < num_vehiculos; j++) {
         printf("Id usuario %s Matricula=%s, plazas=%d , descripcion=%s \n",
                vehiculos[j].idusuario,
@@ -28,9 +28,9 @@ void listarVehiculos(){
     }
 }
 
-void listarViajes(){
-    printf("Esto son todos los viajes\n");
-     for (int j = 0; j < num_vehiculos; j++) {
+void listarViajes(viaje viajes[],int num_viajes){
+    printf("Esto son  los viajes\n");
+     for (int j = 0; j < num_viajes; j++) {
         printf("Id viaje=%s, Matricula=%s,fecha=%02d/%02d/%d , hora salida=%02d:%02d, hora llegada=%02d:%02d, ida o vuelta=%d, plazas=%d, precio=%.2f$, estado=%s \n",
                viajes[j].idviaje,
                viajes[j].matricula,
