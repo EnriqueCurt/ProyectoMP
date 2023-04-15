@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "Cargar_ficheros.h"
-#include "Registro.h"
 #include "Adminusuario.h"
 
 void alta(usuario** usuarios,int* num_usuarios)
