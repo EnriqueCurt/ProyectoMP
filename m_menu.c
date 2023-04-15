@@ -5,7 +5,7 @@
 
 void menuUsuario(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* num_vehiculos,viaje** viajes, int* num_viajes,paso** pasos, int* num_pasos){
 
-    char opcion ,perfil;
+    char opcion ,selec;
 
        do {
         printf("\n--- Menu de usuario ---\n");
@@ -20,7 +20,6 @@ void menuUsuario(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int
 
         switch(opcion) {
             case '1':
-                // Llamar a función para gestionar perfil
                 //Imprime datos del usuario
                 printf("1. Modificar el usuario\n");
                 printf("\nElija una opcion: ");
@@ -28,6 +27,7 @@ void menuUsuario(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int
                 scanf("%c", &selec);
                 if(selec == '1');
                 //Llamar la función de modificar el usuario
+                system("cls");
 
 
 
@@ -128,7 +128,7 @@ void menuAdmin(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* 
                         break;
                      case '3':
                          //Llamar la función para listar usuarios
-                         listaUsuarios(usuarios);
+
                          break;
                  }system("cls");
 
@@ -152,7 +152,7 @@ void menuAdmin(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* 
                         break;
                      case '3':
                          //Llamar la función para listar vehiculo
-                         listarVehiculos(vehiculos);
+
                          break;
                  }system("cls");
 
@@ -179,7 +179,7 @@ void menuAdmin(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* 
                          break;
                      case '4':
                          //Llamar la función para listar viajes
-                         listarViajes(viajes);
+
                          break;
                  }system("cls");
 
