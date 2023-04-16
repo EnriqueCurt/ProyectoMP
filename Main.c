@@ -68,14 +68,13 @@ int main(){
                pasos[j].idviaje,
                pasos[j].poblados);
     }
-<<<<<<< HEAD
-
-    iniciosesion(&usuarios,&num_usuarios);
-=======
-     menuUsuario(&usuarios,&num_usuarios,&vehiculos,&num_vehiculos,&viajes,&num_viajes,&pasos,&num_pasos);
+    system("pause");
+    system("cls");
+    menuInicio(&usuarios,&num_usuarios,&vehiculos,&num_vehiculos,&viajes,&num_viajes,&pasos,&num_pasos);
+    //iniciosesion(&usuarios,&num_usuarios);
+     //menuUsuario(&usuarios,&num_usuarios,&vehiculos,&num_vehiculos,&viajes,&num_viajes,&pasos,&num_pasos);
      //menuAdmin(&usuarios,&num_usuarios,&vehiculos,&num_vehiculos,&viajes,&num_viajes,&pasos,&num_pasos);
     //iniciosesion(&usuarios,&num_usuarios);
->>>>>>> origin/main
     //creacioviaje(&viajes,&num_viajes,&vehiculos);
     volcar_ficheros(usuarios,&num_usuarios,vehiculos,&num_vehiculos,viajes,&num_viajes,pasos,&num_pasos);
     return 0;

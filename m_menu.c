@@ -3,12 +3,42 @@
 #include <string.h>
 #include "struct_ficheros.h"
 
+void menuInicio(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* num_vehiculos,viaje** viajes, int* num_viajes,paso** pasos, int* num_pasos){
+    char opcion;
+    printf("-------------------------------------------\n\nBienvenidos a ESI-Share\n\n-------------------------------------------\n\n");
+    do{
+    printf("\n--- Menu de inicio ---\n");
+    printf("1. Login\n");
+    printf("2. Registrarte\n");
+    printf("3. Salir\n");
+    printf("\nElija una opcion: ");
+    fflush(stdin);
+    scanf("%c", &opcion);
+    switch(opcion){
+            case '1':
+                system("cls");
+                iniciosesion(usuarios,num_usuarios,vehiculos,num_vehiculos,viajes,num_viajes,pasos,num_pasos);
+                break;
+            case '2':
+                system("cls");
+                registro(usuarios,num_usuarios);
+                break;
+            case '3':
+                printf("\nSaliendo del menu de inicio...\n");
+                system("cls");
+                break;
+            default:
+                printf("\nOpcion invalida, vuelva a intentarlo.\n\n");
+
+            }
+        }while(opcion != '3');
+}
 void menuUsuario(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* num_vehiculos,viaje** viajes, int* num_viajes,paso** pasos, int* num_pasos){
 
     char opcion ,selec;
 
        do {
-        printf("\n--- Menu de usuario ---\n");
+        printf("--- Menu de usuario ---\n");
         printf("1. Gestionar perfil\n");
         printf("2. Gestionar vehiculos\n");
         printf("3. Gestionar viajes\n");
@@ -84,6 +114,8 @@ void menuUsuario(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int
                 break;
             case '4':
                 printf("\nSaliendo del menu usuario...\n");
+                system("pause");
+                system("cls");
 
                 break;
             default:
@@ -99,7 +131,7 @@ void menuAdmin(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* 
     char opcion, selec;
 
     do {
-        printf("\n--- Menu de administrador ---\n");
+        printf("--- Menu de administrador ---\n");
         printf("1. Gestionar usuarios\n");
         printf("2. Gestionar vehiculos\n");
         printf("3. Gestionar viajes\n");
@@ -185,7 +217,9 @@ void menuAdmin(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* 
 
                 break;
             case '4':
-                printf("\nSaliendo del menu de administrador...\n");
+                printf("\nSaliendo del menu de administrador...\n\n");
+                system("pause");
+                system("cls");
                 break;
             default:
                 printf("\nOpcion invalida, vuelva a intentarlo.\n");

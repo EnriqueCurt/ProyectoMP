@@ -31,10 +31,10 @@ char buffer[20];
             if(line[strlen(line)-1] == '\n'){
                 line[strlen(line)-1] = '\0';
             }
-             if(i<*num_usuarios-1){
+             if(i < *num_usuarios-1){
                 fprintf(fp, "%s\n", line);
             }
-            if(i==*num_usuarios-1){
+            if(i == (*num_usuarios)-1){
                 line[strlen(line)] = '\0' ;
                 fprintf(fp, "%s", line);
             }
@@ -61,10 +61,16 @@ void volcar_datos_vehiculos_archivo(const char* archivo, vehiculo* vehiculos, in
             strcat(line,buffer);
             strcat(line, "-");
             strcat(line, vehiculos[i].descript);
-            if(i==*num_vehiculos){
-                line[strlen(line)-1] = '\0' ;
+            if(line[strlen(line)-1] == '\n'){
+                line[strlen(line)-1] = '\0';
             }
-            fprintf(fp, "%s", line);
+             if(i<*num_vehiculos-1){
+                fprintf(fp, "%s\n", line);
+            }
+            if(i==*num_vehiculos-1){
+                line[strlen(line)] = '\0' ;
+                fprintf(fp, "%s", line);
+            }
         }
         fclose(fp);
 }
@@ -138,14 +144,20 @@ char buffer[20];
 
     int i = 0;
     char line[MAX_LINE_LENGTH];
-    for(i=0;i<*num_pasos;i++){
+    for(i=0;i < *num_pasos;i++){
             strcpy(line, pasos[i].idviaje);
             strcat(line, "-");
             strcat(line, pasos[i].poblados);
-            if(i==*num_pasos){
-                line[strlen(line)-1] = '\0' ;
+            if(line[strlen(line)-1] == '\n'){
+                line[strlen(line)-1] = '\0';
             }
-            fprintf(fp, "%s", line);
+             if(i < *num_pasos-1){
+                fprintf(fp, "%s\n", line);
+            }
+            if(i == *num_pasos-1){
+                line[strlen(line)] = '\0' ;
+                fprintf(fp, "%s", line);
+            }
         }
         fclose(fp);
     }
