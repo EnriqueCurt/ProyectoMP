@@ -10,6 +10,8 @@
 #include "InicioSesion.c"
 #include "Registro.h"
 #include "Registro.c"
+#include "m_menu.h"
+#include "m_menu.c"
 int main(){
   usuario* usuarios = (usuario*)malloc(sizeof(usuario));
   vehiculo* vehiculos =(vehiculo*)malloc(sizeof(vehiculo));
@@ -66,8 +68,14 @@ int main(){
                pasos[j].idviaje,
                pasos[j].poblados);
     }
+<<<<<<< HEAD
 
     iniciosesion(&usuarios,&num_usuarios);
+=======
+     menuUsuario(&usuarios,&num_usuarios,&vehiculos,&num_vehiculos,&viajes,&num_viajes,&pasos,&num_pasos);
+     //menuAdmin(&usuarios,&num_usuarios,&vehiculos,&num_vehiculos,&viajes,&num_viajes,&pasos,&num_pasos);
+    //iniciosesion(&usuarios,&num_usuarios);
+>>>>>>> origin/main
     //creacioviaje(&viajes,&num_viajes,&vehiculos);
     volcar_ficheros(usuarios,&num_usuarios,vehiculos,&num_vehiculos,viajes,&num_viajes,pasos,&num_pasos);
     return 0;

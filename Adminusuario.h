@@ -2,9 +2,8 @@
 #define _ADMINUSUARIO_
 #include"struct_ficheros.h"
 
-void alta();
-void baja();
-void modificar();
-void listar();
+void alta(usuario**,int*);
+void baja(usuario**,int*);
+void modificar(usuario**,int*);
 
 #endif
