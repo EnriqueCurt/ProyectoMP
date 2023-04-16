@@ -66,6 +66,7 @@ int main(){
                pasos[j].idviaje,
                pasos[j].poblados);
     }
+
     iniciosesion(&usuarios,&num_usuarios);
     //creacioviaje(&viajes,&num_viajes,&vehiculos);
     volcar_ficheros(usuarios,&num_usuarios,vehiculos,&num_vehiculos,viajes,&num_viajes,pasos,&num_pasos);
