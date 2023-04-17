@@ -8,18 +8,18 @@
 
 void iniciosesion(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* num_vehiculos,viaje** viajes, int* num_viajes,paso** pasos, int* num_pasos){
     int i,no_existe,registrar;
+    i=0;
     no_existe=1;
     char cuenta[6],contra[9];
     while(no_existe==1){
         printf("Nombre de cuenta:\n");
         fflush(stdin);
-        scanf("%6s",cuenta);
+        scanf("%5s",cuenta);
         printf("Contrasena:\n");
         fflush(stdin);
-        scanf("%9s",contra);
-
-        for(i=0; no_existe==1 && i< *num_usuarios ;i++){
-            if((strcmp((*usuarios)[i].cuenta,cuenta)==0) && (strcmp((*usuarios)[i].contra,contra)==0)){
+        scanf("%8s",contra);
+        for(i=0; (no_existe==1) && (i < (*num_usuarios)) ;i++){
+            if((strncmp((*usuarios)[i].cuenta,cuenta,5)== 0) && (strncmp((*usuarios)[i].contra,contra,8)==0)){
                 no_existe=0;
                 printf("\nLogin correcto\n\n");
                 system("pause");
@@ -40,7 +40,7 @@ void iniciosesion(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, in
         registro(usuarios,num_usuarios);
     }
     if((*usuarios)[i].administrador==0){
-        menuUsuario(usuarios,num_usuarios,vehiculos,num_vehiculos,viajes,num_viajes,pasos,num_pasos);                                         //Se le redirigirá al menú de usuario normal
+        menuUsuario(usuarios,num_usuarios,vehiculos,num_vehiculos,viajes,num_viajes,pasos,num_pasos,i);                                         //Se le redirigirá al menú de usuario normal
         }
     if((*usuarios)[i].administrador==1){
         menuAdmin(usuarios,num_usuarios,vehiculos,num_vehiculos,viajes,num_viajes,pasos,num_pasos);                                   //Se le redirigirá al menú de administrador

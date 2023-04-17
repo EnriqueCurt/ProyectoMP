@@ -58,7 +58,7 @@ scanf("%i",&(*viajes)[idviaje].fecha.dia);
 	   }
 
 	   if((*viajes)[idviaje].fecha.ano==ano){
-            while((*viajes)[idviaje].fecha.mes<mes){ // controlador mes
+            while((*viajes)[idviaje].fecha.mes<mes || (*viajes)[idviaje].fecha.mes>12 ){ // controlador mes
             printf("mes no posible\n");
             fflush(stdin);
             scanf("%i",&(*viajes)[idviaje].fecha.mes);
@@ -66,7 +66,10 @@ scanf("%i",&(*viajes)[idviaje].fecha.dia);
         }
 
         if((*viajes)[idviaje].fecha.ano==ano && (*viajes)[idviaje].fecha.mes==mes ){
-            while((*viajes)[idviaje].fecha.dia<dia){ // controlador dia
+            while(((*viajes)[idviaje].fecha.dia<dia) ||
+                   ((*viajes)[idviaje].fecha.mes==2 && (*viajes)[idviaje].fecha.dia>29 && (*viajes)[idviaje].fecha.ano % 4 == 0) ||
+                   ((*viajes)[idviaje].fecha.mes==2 && (*viajes)[idviaje].fecha.dia>28 && (*viajes)[idviaje].fecha.ano % 4 != 0 )
+                  || ((*viajes)[idviaje].fecha.dia>32) ){ // controlador dia
             printf("dia no posible\n");
             fflush(stdin);
             scanf("%i",&(*viajes)[idviaje].fecha.dia);
@@ -76,8 +79,13 @@ scanf("%i",&(*viajes)[idviaje].fecha.dia);
 printf("introduzca hora de salida\n"); //pide la hora de salida !! hay que controlar que la hora no haya pasado
 fflush(stdin);
 scanf("%i",&(*viajes)[idviaje].horasalida.horas);
+while((*viajes)[idviaje].horasalida.horas>23){
+       printf("hora no posible");
+	   fflush(stdin);
+	   scanf("%i",&(*viajes)[idviaje].horasalida.horas);
+}
     if((*viajes)[idviaje].fecha.ano==ano && (*viajes)[idviaje].fecha.mes==mes && (*viajes)[idviaje].fecha.dia==dia){
-	   while((*viajes)[idviaje].horasalida.horas<hora){ // controlador hora salida
+	   while((*viajes)[idviaje].horasalida.horas<hora ){ // controlador hora salida
 	   printf("hora no posible");
 	   fflush(stdin);
 	   scanf("%i",&(*viajes)[idviaje].horasalida.horas);
@@ -87,6 +95,11 @@ scanf("%i",&(*viajes)[idviaje].horasalida.horas);
 printf("introduzca minuto de salida\n");
 fflush(stdin);
 scanf("%i",&(*viajes)[idviaje].horasalida.minutos);
+while((*viajes)[idviaje].horasalida.minutos>60){
+       printf("minuto no posible");
+	   fflush(stdin);
+	   scanf("%i",&(*viajes)[idviaje].horasalida.minutos);
+}
     if((*viajes)[idviaje].horasalida.horas==hora && (*viajes)[idviaje].fecha.ano==ano && (*viajes)[idviaje].fecha.mes==mes && (*viajes)[idviaje].fecha.dia==dia){
             while((*viajes)[idviaje].horasalida.minutos<=minuto){ //controlador minuto salida
             printf("minuto no posible\n");
@@ -98,6 +111,11 @@ scanf("%i",&(*viajes)[idviaje].horasalida.minutos);
 printf("introduzca hora de llegada\n"); // pide la hora de llegada !! hay que controlar que sea mayor que la de salida
 fflush(stdin);
 scanf("%i",&(*viajes)[idviaje].horallegada.horas);
+       while((*viajes)[idviaje].horallegada.horas>23){
+       printf("hora no posible");
+	   fflush(stdin);
+	   scanf("%i",&(*viajes)[idviaje].horallegada.horas);
+        }
 	   while((*viajes)[idviaje].horallegada.horas<(*viajes)[idviaje].horasalida.horas){ // controlador hora llegada
 	   printf("hora no posible\n");
 	   fflush(stdin);
@@ -107,6 +125,11 @@ scanf("%i",&(*viajes)[idviaje].horallegada.horas);
 printf("introduzca minuto de llegada\n");
 fflush(stdin);
 scanf("%i",&(*viajes)[idviaje].horallegada.minutos);
+       while((*viajes)[idviaje].horallegada.minutos>60){
+       printf("minuto no posible");
+	   fflush(stdin);
+	   scanf("%i",&(*viajes)[idviaje].horallegada.minutos);
+        }
 	   while((*viajes)[idviaje].horallegada.minutos<=(*viajes)[idviaje].horasalida.minutos){ // controlador minuto llegada
 	   printf("minuto no posible\n");
 	   fflush(stdin);

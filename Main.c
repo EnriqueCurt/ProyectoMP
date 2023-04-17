@@ -12,6 +12,8 @@
 #include "Registro.c"
 #include "m_menu.h"
 #include "m_menu.c"
+#include "modificar.c"
+#include "modificar.h"
 int main(){
   usuario* usuarios = (usuario*)malloc(sizeof(usuario));
   vehiculo* vehiculos =(vehiculo*)malloc(sizeof(vehiculo));

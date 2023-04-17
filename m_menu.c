@@ -7,7 +7,7 @@ void menuInicio(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int*
     char opcion;
     printf("-------------------------------------------\n\nBienvenidos a ESI-Share\n\n-------------------------------------------\n\n");
     do{
-    printf("\n--- Menu de inicio ---\n");
+    printf("--- Menu de inicio ---\n");
     printf("1. Login\n");
     printf("2. Registrarte\n");
     printf("3. Salir\n");
@@ -25,6 +25,7 @@ void menuInicio(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int*
                 break;
             case '3':
                 printf("\nSaliendo del menu de inicio...\n");
+                system("pause");
                 system("cls");
                 break;
             default:
@@ -33,7 +34,7 @@ void menuInicio(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int*
             }
         }while(opcion != '3');
 }
-void menuUsuario(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* num_vehiculos,viaje** viajes, int* num_viajes,paso** pasos, int* num_pasos){
+void menuUsuario(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int* num_vehiculos,viaje** viajes, int* num_viajes,paso** pasos, int* num_pasos,int i){
 
     char opcion ,selec;
 
@@ -50,13 +51,21 @@ void menuUsuario(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int
 
         switch(opcion) {
             case '1':
-                //Imprime datos del usuario
+                system("cls");
+                printf("Usuario %d: id=%s, nombre=%s, localidad=%s, admin=%d, cuenta=%s, contra=%s\n\n",
+               i+1,
+               (*usuarios)[i].idusuario,
+               (*usuarios)[i].nombre,
+               (*usuarios)[i].localidad,
+               (*usuarios)[i].administrador,
+               (*usuarios)[i].cuenta,
+               (*usuarios)[i].contra);
                 printf("1. Modificar el usuario\n");
                 printf("\nElija una opcion: ");
                 fflush(stdin);
                 scanf("%c", &selec);
                 if(selec == '1');
-                //Llamar la función de modificar el usuario
+                u_modificar_usuario(usuarios,i);
                 system("cls");
 
 
@@ -73,7 +82,7 @@ void menuUsuario(usuario** usuarios, int* num_usuarios,vehiculo** vehiculos, int
 
                  switch(selec) {
                      case '1':
-                        //Llamar la función para dar alta o baja el vehiculo
+                        u_crear_vehiculo(vehiculos,i,num_vehiculos);
                         break;
                      case '2':
                         //Llamar la función para modificar el vehiculo
