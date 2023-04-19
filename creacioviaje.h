@@ -5,6 +5,7 @@
 #include <string.h>
 #include "struct_ficheros.h"
 
-void creacioviaje(viaje** viajes,int* num_viajes,vehiculo** vehiculos);
+void creacioviaje(viaje** viajes,int* num_viajes,vehiculo** vehiculos,int* num_vehiculos,paso** pasos,int* num_pasos);
+void u_entrar_viaje(viaje** viajes,int* num_viajes,paso** pasos,int* num_pasos);
 
 #endif
